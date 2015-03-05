@@ -71,8 +71,7 @@ SlimerJSBrowser.prototype = {
 		linux: require( 'slimerjs' ).path,
 		darwin: require( 'slimerjs' ).path,
 		win32: slimerJSExePath()
-	},
-	ENV_CMD: 'SLIMERJS_BIN'
+	}
 };
 
 SlimerJSBrowser.$inject = ['baseBrowserDecorator', 'config.slimerjsLauncher', 'args'];
