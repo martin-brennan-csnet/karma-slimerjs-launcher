@@ -18,7 +18,7 @@ var slimerJSExePath = function () {
 };
 
 var slimerJSRunnerPath = function () {
-	return path.join(slimerDir(), '/slimerjs --debug ');
+	return path.join(slimerDir(), '/slimerjs');
 }
 
 var isWindows = function () {
@@ -61,6 +61,7 @@ var SlimerJSBrowser = function(baseBrowserDecorator, config, args) {
 
 		if (isWindows()) flags = flags.concat(windowsFlags(this._tempDir));
 		flags = flags.concat(captureFile);
+		flags.push('--debug');
 
 		// Start SlimerJS
 		this._execCommand(this._getCommand(), flags);
