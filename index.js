@@ -17,6 +17,10 @@ var slimerJSExePath = function () {
 	return path.join(slimerDir(), '/xulrunner/xulrunner.exe');
 };
 
+var slimerJSRunnerPath = function () {
+	return path.join(slimerDir(), '/xulrunner/xulrunner');
+}
+
 var isWindows = function () {
 	return /^win/.test(process.platform);
 };
@@ -68,7 +72,7 @@ SlimerJSBrowser.prototype = {
 	name: 'SlimerJS',
 
 	DEFAULT_CMD: {
-		linux: require( 'slimerjs' ).path,
+		linux: slimerJSRunnerPath(),
 		darwin: require( 'slimerjs' ).path,
 		win32: slimerJSExePath()
 	}
