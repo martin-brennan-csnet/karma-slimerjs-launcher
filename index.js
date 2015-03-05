@@ -18,7 +18,7 @@ var slimerJSExePath = function () {
 };
 
 var slimerJSRunnerPath = function () {
-	return path.join(slimerDir(), '/xulrunner/xulrunner');
+	return path.join(slimerDir(), '/slimerjs --debug ');
 }
 
 var isWindows = function () {
